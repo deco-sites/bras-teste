@@ -1,0 +1,27 @@
+{
+  "version": "6",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1716300393322,
+      "tag": "0000_wonderful_wither",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1716300415365,
+      "tag": "0001_careless_apocalypse",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1716300526386,
+      "tag": "0002_curious_liz_osborn",
+      "breakpoints": true
+    }
+  ]
+}

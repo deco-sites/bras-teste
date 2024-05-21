@@ -1,9 +1,13 @@
 import { App, AppContext as AC } from "deco/mod.ts";
 import website, { Props } from "apps/website/mod.ts";
+import { RecordsApp } from "apps/records/mod.ts";
+import { config } from "https://deno.land/x/dotenv@v3.2.2/mod.ts";
 
 import manifest, { Manifest } from "../manifest.gen.ts";
 
 type WebsiteApp = ReturnType<typeof website>;
+
+await config({ export: true, path: ".env.local" });
 
 /**
  * @title Site
@@ -26,5 +30,5 @@ export default function Site(
 }
 
 export type SiteApp = ReturnType<typeof Site>;
-export type AppContext = AC<SiteApp>;
+export type AppContext = AC<SiteApp & RecordsApp>;
 export { onBeforeResolveProps, Preview } from "apps/website/mod.ts";
