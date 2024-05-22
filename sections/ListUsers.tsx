@@ -27,6 +27,7 @@ export const loader = async (_: null, __: Request, ctx: AppContext) => {
   // await _setupDb(ctx);
   const users = await ctx.invoke.records.loaders.executeSql({
     sql: "select * from users",
+    args:[],
   }) as unknown as { id: string; fullName: string | null }[];
 
   return { users };
