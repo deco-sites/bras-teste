@@ -24,13 +24,19 @@ const _setupDb = async (ctx: AppContext) => {
 };
 
 export const loader = async (_: null, __: Request, ctx: AppContext) => {
-  // await _setupDb(ctx);
-  const users = await ctx.invoke.records.loaders.executeSql({
-    sql: "select * from users",
-    args:[],
-  }) as unknown as { id: string; fullName: string | null }[];
+  const sqlClient = await ctx.invoke(
+    "records/loaders/sqlClient.ts",
+  );
 
-  return { users };
+  // await _setupDb(ctx);
+  const users = await sqlClient.execute({
+    sql: "select * from users",
+    args: [],
+  });
+
+  return {
+    users: (users.rows as unknown as { id: string; fullName: string | null }[]),
+  };
 };
 
 export default function Section({ users }: Awaited<ReturnType<typeof loader>>) {
