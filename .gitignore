@@ -79,5 +79,4 @@ _fresh/
 
 _docker_deps.ts
 .metadata/changeset.json
-.env.local
-/sqlite.db
+sqlite.db
