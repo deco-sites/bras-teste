@@ -1,4 +1,5 @@
 import { AppContext } from "site/apps/site.ts";
+import { users } from "site/db/schema.ts";
 
 const _setupDb = async (ctx: AppContext) => {
   const sqlClient = await ctx.invoke(
@@ -24,18 +25,19 @@ const _setupDb = async (ctx: AppContext) => {
 };
 
 export const loader = async (_: null, __: Request, ctx: AppContext) => {
-  const sqlClient = await ctx.invoke(
-    "records/loaders/sqlClient.ts",
+  const drizzle = await ctx.invoke(
+    "records/loaders/drizzle.ts",
   );
 
   // await _setupDb(ctx);
-  const users = await sqlClient.execute({
-    sql: "select * from users",
-    args: [],
-  });
+  const usersD = await drizzle.select({
+    id: users.id,
+    fullName: users.fullName,
+  }).from(users);
+  console.log(usersD);
 
   return {
-    users: (users.rows as unknown as { id: string; fullName: string | null }[]),
+    users: usersD,
   };
 };
 
