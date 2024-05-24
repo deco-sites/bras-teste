@@ -1,4 +1,5 @@
 import { AppContext } from "site/apps/site.ts";
+// import { profiles } from "site/db/schema.ts";
 
 const _setupDb = async (ctx: AppContext) => {
   const sqlClient = await ctx.invoke(
@@ -30,9 +31,9 @@ export const loader = async (_: null, __: Request, ctx: AppContext) => {
 
   // await _setupDb(ctx);
   // const usersD = await drizzle.select({
-  //   id: users.id,
-  //   fullName: users.fullName,
-  // }).from(users);
+  //   id: profiles.id,
+  //   fullName: profiles.name,
+  // }).from(profiles);
   // console.log(usersD);
 
   return {
