@@ -1,4 +1,3 @@
-
 import { defineConfig } from "drizzle-kit";
 
 // Code from deno std/fmt that can't be improted https://deno.land/std@0.224.0/fmt/colors.ts?source
@@ -43,11 +42,11 @@ if (!authToken) {
   const link = brightGreen(
     `https://admin.deco.cx/sites/${
       Deno.env.get("DECO_SITE_NAME")
-    }/spaces/Records`,
+    }/spaces/Settings`,
   );
 
   console.log(
-    `Token not setted up. Open ${link} to get database auth credentials.`,
+    `Token not setted up. Open ${link} to get database credentials.`,
   );
 }
 
