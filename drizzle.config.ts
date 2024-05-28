@@ -48,6 +48,8 @@ if (!authToken) {
   console.log(
     `Token not setted up. Open ${link} to get database credentials.`,
   );
+
+  throw Error();
 }
 
 const dbCredentials = {
