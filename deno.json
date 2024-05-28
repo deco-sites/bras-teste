@@ -1,8 +1,8 @@
 {
   "imports": {
     "site/": "./",
-    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.67.4/",
-    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0eaa803/",
+    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.68.1/",
+    "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.45.0/",
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",
     "preact": "https://esm.sh/preact@10.19.6",
     "preact/": "https://esm.sh/preact@10.19.6/",
@@ -35,7 +35,9 @@
     "db:generate": "deno run -A --node-modules-dir npm:drizzle-kit@0.21.2 generate",
     "db:migrate": "deno run -A --node-modules-dir --config=deno.json npm:drizzle-kit@0.21.2 migrate"
   },
-  "githooks": { "pre-commit": "check" },
+  "githooks": {
+    "pre-commit": "check"
+  },
   "exclude": [
     "node_modules",
     "static/",
@@ -45,7 +47,14 @@
     ".deco/**",
     "drizzle"
   ],
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
   "nodeModulesDir": false,
   "compilerOptions": {
     "jsx": "react-jsx",
