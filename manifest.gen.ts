@@ -4,7 +4,6 @@
 
 import * as $$$$$$$$$$$0 from "./apps/deco/records.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
-import * as $$$0 from "./loaders/xpto.ts";
 import * as $$$$$$0 from "./sections/BlogPosts.tsx";
 import * as $$$$$$1 from "./sections/Faq.tsx";
 import * as $$$$$$2 from "./sections/Footer.tsx";
@@ -18,12 +17,8 @@ import * as $$$$$$6 from "./sections/ListUsers.tsx";
 import * as $$$$$$7 from "./sections/Logos.tsx";
 import * as $$$$$$8 from "./sections/Testimonials.tsx";
 import * as $$$$$$9 from "./sections/Theme/Theme.tsx";
-import * as $$$$$$10 from "./sections/Xurebinha.tsx";
 
 const manifest = {
-  "loaders": {
-    "site/loaders/xpto.ts": $$$0,
-  },
   "sections": {
     "site/sections/BlogPosts.tsx": $$$$$$0,
     "site/sections/Faq.tsx": $$$$$$1,
@@ -38,7 +33,6 @@ const manifest = {
     "site/sections/Logos.tsx": $$$$$$7,
     "site/sections/Testimonials.tsx": $$$$$$8,
     "site/sections/Theme/Theme.tsx": $$$$$$9,
-    "site/sections/Xurebinha.tsx": $$$$$$10,
   },
   "apps": {
     "site/apps/deco/records.ts": $$$$$$$$$$$0,
